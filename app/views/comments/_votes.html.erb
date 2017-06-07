@@ -1,0 +1,27 @@
+<% unless current_user.liked?(comment) %>
+
+  <%= link_to like_post_comment_path(comment.post,comment), class: "like", method: :put do %>
+  <button type="button" class="btn btn-info" aria-label="Left Align">
+    <span class="glyphicon glyphicon-thumbs-up glyphicon-align-left" aria-hidden="true">Upvote</span>
+    <span class="badge"><%= comment.get_upvotes.size %></span>
+  </button>
+  <% end %>
+<% else %>
+  <button disabled=true class="btn btn-sm btn-success">
+    <span class="btn btn-sm">You liked this</span>
+  </button>
+<% end %>
+
+<% unless current_user.disliked?(comment) %>
+
+<%= link_to unlike_post_comment_path(comment.post,comment), class: "like", method: :put do %>
+  <button type="button" class="btn btn-info" aria-label="Left Align">
+    <span class="glyphicon glyphicon-thumbs-down glyphicon-align-left">Downvote</span>
+    <span class="badge"><%= comment.get_downvotes.size %></span>
+  </button>
+  <% end %>
+<% else %>
+  <button disabled=true class="btn btn-sm btn-success">
+    <span class="btn btn-sm">You Disliked this</span>
+  </button>
+<% end %>

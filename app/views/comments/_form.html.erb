@@ -1,0 +1,7 @@
+<%= form_for([@post, @post.comments.build]) do |f| %>
+	<p>
+		<%= f.label :content %><br>
+		<%= f.text_area :content ,:required=>true%>
+	</p>
+	<p><%= f.submit 'Add Comment', class: "btn btn-primary" %></p>
+<% end %>

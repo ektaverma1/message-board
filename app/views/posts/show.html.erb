@@ -1,0 +1,49 @@
+<div class="show_wrapper">
+	<div class="post-show">
+		<div class="row">
+			<h3 class="post-title col-sm-12">
+				<%= @post.title %>
+			</h3>
+		</div>
+		<div class="row">
+			<div class="post-time col-sm-12">
+				Submitted <%= time_ago_in_words(@post.created_at) %> Ago
+				<% if user_signed_in? %>
+				| <%= link_to 'Edit', edit_post_path(@post) if @post.is_it_published? %>
+				| <%= link_to 'Delete', post_path(@post), method: :delete, data: {confirm: 'Are you sure?'} %>
+				<% end %>
+			</div>
+		</div><br>
+
+		<div class="row">
+			<div class="post-body col-sm-12">
+				<%= @post.body %>
+			</div><br>
+			<div class="thumb-align">
+				<% thumbnail= LinkThumbnailer.generate(@post.website_url).images unless @post.website_url.nil? || @post.website_url ==""%>
+				<% unless thumbnail.nil? %>
+					<%=link_to( image_tag(thumbnail.first , :class=>"img-thumbnail"), @post.website_url) %>
+				<% end %>
+			</div>
+		</div>
+	</div><br>
+
+	<div class="comments-show">
+		<div class="row"><h5 class="comment-section-header col-sm-12">Comments:</h5></div>
+		<div class="row">
+			<div class="col-sm-12">
+				<% if @post.comments.present? %>
+				<p><%= render @post.comments %></p>
+				<% else %>
+				No Comments yet.
+				<% end %>
+			</div>
+		</div><br>
+		<div class="row"><h5 class="col-sm-12">Reply to Post:</h5></div>
+		<div class="row">
+			<div class="col-sm-12">
+				<%= render 'comments/form'%>
+			</div>
+		</div>
+	</div>
+</div>

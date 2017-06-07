@@ -1,0 +1,51 @@
+<br>
+<div class="row">
+  <div class="col-sm-12">
+    <div class="col-sm-4" style="float:left;margin-top: 25px;">
+
+      <%= render :partial=>'left_menu'%>
+
+    </div>
+    <br/>
+
+    <div class="col-sm-8" style="float:right">
+
+      <% if @posts.present? %>  
+        <% @posts.each do |post| %>
+        <div class="card-deck">
+          <div class="card">
+            <div class="card-block">
+              <div class="username"><%= image_tag(post.user.avatar.url ,:class=>'img-thumbnail')%>
+                <%=  post.user.name%>
+              </div>
+              <h4 class="card-title"><%= link_to post.title.titleize , post %></h4>
+              <h6> <%= "Published At #{post.published_at}" unless post.published_at.nil?%> </h6> 
+              <h6> <% post.comments.each do |comment| %>
+                <%= "Replied by #{comment.user.name} at #{time_ago_in_words(comment.updated_at)}" %>
+                <br>
+                <% end%>
+              </h6>
+
+              <%= render :partial=> 'votes', :locals => {:post => post} %>
+
+              <% published_or_no =  post.published_at.nil? ? false : true %>
+              <div class="published">
+                <%= button_to 'Publish Post' , publish_post_path(post.id), method: :post,:disabled => published_or_no%>
+              </div>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted"><%= time_ago_in_words(post.created_at) %> ago by <%= post.user.name %></small>
+            </div>
+          </div>
+        </div><br>
+        <% end %>
+      <% else %>
+      <p>No posts yet!</p>
+      <% end %>
+    </div>
+  </div>
+</div>
+<!-- for pagination-->
+<div class="clear" style= "float:right;margin-right: 13px;">
+  <%= paginate @posts, theme: 'twitter-bootstrap-4'%>
+</div>

@@ -1,0 +1,133 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "bootstrap";
+
+.show_wrapper{
+	margin-left: 15rem;
+  margin-top: 3rem;
+}
+.post-show{
+	background-color: aliceblue;
+  width: 38rem;
+  padding: 3rem;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 15px;
+}
+.show-back{
+	float:left;
+}
+#search{
+  width:23rem;
+}
+#user_id{
+  width: 22rem;
+}
+.post-form-wrapper{
+  background-color: aliceblue;
+  width: 38rem;
+  padding: 3rem;
+  margin-left: 15rem;
+  margin-top: 3rem;
+}
+.new_post_header{
+  margin-left: 15rem;
+  margin-top: 3rem;
+}
+.post_create{
+  margin-left: 11.3rem;
+  margin-top: 1rem;
+}
+.registration_wrapper{
+  background-color: aliceblue;
+  margin-left: 14rem;
+  margin-right: 14rem;
+  margin-top: 3rem;
+  padding:3rem;
+}
+.login_wrapper{
+  background-color: aliceblue;
+  margin-left: 14rem;
+  margin-right: 14rem;
+  margin-top: 3rem;
+  padding:3rem;
+}
+.clearfix:after {
+   content: ".";
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+.like:hover{
+  text-decoration: none;
+}
+a{
+  text-decoration: none;
+}
+.published{
+  float:right;
+  text-decoration: none;
+}
+.img-thumbnail{
+  width: 14%;
+  display: block;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+
+}
+.username
+{
+  font-style: italic;
+  color:lightskyblue;
+  font-size: 14px;
+}
+.comments-border
+{
+  border-width: 1px;
+  border-style: solid;
+  margin-bottom: 15px;
+  border-radius: 15px;
+  width: 610px;
+  padding: 50px;
+}
+.comment_body{
+  font-size: larger;
+  font-weight: 500;
+}
+.comment_user{
+  font-size: smaller;
+  font-style: italic;
+}
+.comment_time{
+  font-size: small;
+}
+.left_menu{
+  float:left;
+}
+.post-time{
+  font-size: small;
+}
+.post-paginate{
+  float: right;
+  margin-right: 13px;
+}
+.welcome-text{
+  background-color: aliceblue;
+  border-width: 1px;
+  border-style: solid;
+  margin-bottom: 20px;
+  margin-top: 50px;
+  border-radius: 15px;
+  width: 610px;
+  padding: 50px;
+  font-size: x-large;
+  font-family: monospace;
+  padding-left: 160px;
+}
+.thumb-align{
+  margin-left: 13px;
+}
