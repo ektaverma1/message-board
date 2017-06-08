@@ -1,4 +1,5 @@
 <div class="show_wrapper">
+<%= link_to "Back", posts_path, class: "btn btn-default" %>
 	<div class="post-show">
 		<div class="row">
 			<h3 class="post-title col-sm-12">
@@ -8,9 +9,9 @@
 		<div class="row">
 			<div class="post-time col-sm-12">
 				Submitted <%= time_ago_in_words(@post.created_at) %> Ago
-				<% if user_signed_in? %>
-				| <%= link_to 'Edit', edit_post_path(@post) if @post.is_it_published? %>
-				| <%= link_to 'Delete', post_path(@post), method: :delete, data: {confirm: 'Are you sure?'} %>
+				<% if @post.user_id == current_user.id %>
+					| <%= link_to 'Edit', edit_post_path(@post) if @post.is_it_published? %>
+					| <%= link_to 'Delete', post_path(@post), method: :delete, data: {confirm: 'Are you sure?'} %>
 				<% end %>
 			</div>
 		</div><br>
