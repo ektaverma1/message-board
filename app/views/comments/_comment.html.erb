@@ -1,6 +1,6 @@
 <div class="comment comments-border">
 	<div class="comment_content">
-		<p class="comment_body"><%= comment.content %></p>
+		<p class="comment_body"><%= comment.content.html_safe %></p>
 		<h6 class="comment_user"><%= "Reply By #{comment.user.name}" %></h6>
 		<p class="comment_time"><%= time_ago_in_words(comment.created_at) %> Ago</p>
 	</div>	
