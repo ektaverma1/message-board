@@ -71,13 +71,16 @@ a{
   float:right;
   text-decoration: none;
 }
+.img-thumbnail-user{
+  width: 12%;
+  display: block;
+}
 .img-thumbnail{
-  width: 14%;
+  width: 35%;
   display: block;
   border-radius: 100px;
   -webkit-border-radius: 100px;
   -moz-border-radius: 100px;
-
 }
 .username
 {

@@ -15,7 +15,7 @@
         <div class="card-deck">
           <div class="card">
             <div class="card-block">
-              <div class="username"><%= image_tag(post.user.avatar.url ,:class=>'img-thumbnail')%>
+              <div class="username"><%= image_tag(post.user.avatar.url ,:class=>'img-thumbnail-user')%>
                 <%=  post.user.name%>
               </div>
               <h4 class="card-title"><%= link_to post.title.titleize , post %></h4>
