@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-	  paginates_per 3
+	  paginates_per 2
   	belongs_to :user
   	has_many :comments, dependent: :destroy
   	acts_as_votable
