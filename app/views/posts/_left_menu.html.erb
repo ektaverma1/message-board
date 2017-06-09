@@ -1,10 +1,9 @@
 <%= form_tag(posts_path, :method => "get", id: "search-form", class: "form-group") do %>
+	<div class="col-sm-4">
+		<%= select_tag :user_id, options_from_collection_for_select(@users, 'id', 'name', params[:user_id]),style: "width: 19rem;",  prompt: "Sort Post by Author", onchange: "this.form.submit(); ", class: "form-control" %>
+	</div><br>
 	<div class="col-sm-4"><%= text_field_tag :search, params[:search], placeholder: "Search Posts", class: "form-control" ,style: "width: 19rem;" %>
 	</div>
 	<br>
 	<div class="col-sm-2"><%= submit_tag "Search", class: "btn btn-primary" %></div>
-	<br>
-	<div class="col-sm-4">
-		<%= select_tag :user_id, options_from_collection_for_select(@users, 'id', 'name', params[:user_id]),style: "width: 19rem;",  prompt: "Sort Post by Author", onchange: "this.form.submit(); ", class: "form-control" %>
-	</div>
 <% end %>
