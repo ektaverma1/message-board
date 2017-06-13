@@ -5,5 +5,9 @@
 	<div class="col-sm-4"><%= text_field_tag :search, params[:search], placeholder: "Search Posts", class: "form-control" ,style: "width: 19rem;" %>
 	</div>
 	<br>
-	<div class="col-sm-2"><%= submit_tag "Search", class: "btn btn-primary" %></div>
+	<div class="menu-submit">
+		<%= submit_tag "Search", class: "btn btn-primary" %>
+		<%= link_to "Reset", posts_path, class: "btn btn-default" %>
+	</div>
+
 <% end %>

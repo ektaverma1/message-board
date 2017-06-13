@@ -5,7 +5,14 @@ class PostsController < ApplicationController
 
 	def index
 		@users = User.all
-		@posts = (params[:user_id].nil? && params[:search].nil?) ? Post.all : Post.search_posts(params) 
+		#@posts = (params[:user_id].nil? && params[:search].nil?) ? Post.all : Post.search_posts(params)
+		if params[:user_id].present?
+			@posts = Post.search_posts(params)
+		elsif params[:search].present?
+			@posts = Post.contains_blog_keyword(params)
+		else
+			@posts = Post.all
+		end
 		@posts = @posts.order("created_at DESC").page(params[:page])
 	end
 
@@ -73,7 +80,6 @@ class PostsController < ApplicationController
 	end
 
 	def remove_params
-		Rails.logger.info "========remove_params====#{params.inspect}"
 		params.reject!{|_, v| v.blank?}
 	end
 end
