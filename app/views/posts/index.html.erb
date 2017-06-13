@@ -17,8 +17,8 @@
                 <br><%=  post.user.name%>
               </div>
               <h4 class="card-title"><%= link_to post.title.titleize , post %></h4>
-              <h6> <%= "Published At #{post.published_at}" unless post.published_at.nil?%> </h6> 
-              <h6> <% post.comments.each do |comment| %>
+              <h6 class="post-time"> <%= "Published At #{post.published_at.strftime("%I:%M%p")}" unless post.published_at.nil?%></h6>
+              <h6 class="post-time"> <% post.comments.each do |comment| %>
                 <%= "Replied by #{comment.user.name} at #{time_ago_in_words(comment.updated_at)}" %>
                 <br>
                 <% end%>
