@@ -30,7 +30,7 @@
 			</div>
 		</div><br>
 		<div class="row form-group">
-			<%= f.submit 'Create Post', class: "offset-md-4 col-md-2 btn btn-primary" %>
+			<%= f.submit @post.new_record? ? "Create Post" : "Update Post", class: "offset-md-4 col-md-2 btn btn-primary" %>
 		</div>
 	</div>
 	<% end %>
