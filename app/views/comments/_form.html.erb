@@ -1,9 +1,9 @@
 <div class="row">
 	<%= form_for([@post, @post.comments.build]) do |f| %>
-		<p class="col-sm-12">
+		<p class="col-md-12">
 			<%= f.label :content %><br>
 			<%= f.trix_editor :content, :required => true %>
 		</p>
-		<p class="col-sm-12"><%= f.submit 'Add Comment', class: "btn btn-primary" %></p>
+		<p class="col-md-12"><%= f.submit 'Add Comment', class: "btn btn-primary" %></p>
 	<% end %>
 </div>

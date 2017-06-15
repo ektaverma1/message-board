@@ -1,9 +1,9 @@
 <nav class="navbar navbar-dark bg-inverse">
   <div class="row">
-    <div class="col-sm-10">
+    <div class="col-md-10">
       <%= link_to "Message Board", posts_path, class: "navbar-brand" %>
     </div>
-    <div class="col-sm-2">
+    <div class="col-md-2">
       <% if user_signed_in? %>
         <div class="buttons">
           <button class="button btn btn-success">
