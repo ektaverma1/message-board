@@ -18,7 +18,7 @@
 
 	<div class="row">
 		<div class="post-body col-md-12">
-			<%= @post.body %>
+			<%= @post.body.html_safe %>
 		</div><br><br>
 		<div class="thumb-align">
 			<% thumbnail= LinkThumbnailer.generate(@post.website_url).images unless @post.website_url.nil? || @post.website_url ==""%>

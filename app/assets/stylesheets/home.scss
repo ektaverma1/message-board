@@ -27,18 +27,22 @@
 }
 .post-form-wrapper{
   background-color: aliceblue;
-  width: 38rem;
   padding: 3rem;
-  margin-left: 15rem;
   margin-top: 3rem;
 }
 .new_post_header{
-  margin-left: 15rem;
   margin-top: 3rem;
+  font-size: 30px;
+  font-family: monospace;
 }
 .post_create{
   margin-left: 11.3rem;
   margin-top: 1rem;
+}
+.form-label{
+  font-size: 20px;
+  line-height: 24px;
+  font-family: monospace;
 }
 .registration_wrapper{
   background-color: aliceblue;
