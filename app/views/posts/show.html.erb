@@ -21,10 +21,8 @@
 			<%= @post.body.html_safe %>
 		</div><br><br>
 		<div class="thumb-align">
-			<% thumbnail= LinkThumbnailer.generate(@post.website_url).images unless @post.website_url.nil? || @post.website_url ==""%>
-			<% unless thumbnail.nil? %>
-				<%=link_to( image_tag(thumbnail.first , :class=>"img-thumbnail"), @post.website_url) %>
-			<% end %>
+			<% thumbnail ||= LinkThumbnailer.generate(@post.website_url).images %>
+				<%=link_to( image_tag(thumbnail.first , :class=>"img-thumbnail"), @post.website_url) if thumbnail.present? %>
 		</div>
 	</div>
 </div><br>
